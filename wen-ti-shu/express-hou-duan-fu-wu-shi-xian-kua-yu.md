@@ -1,4 +1,8 @@
-# 🛠 一、使用nginx代理实现跨域
+---
+description: 2023.5.22
+---
+
+# 🛠 express后端服务实现跨域
 
 ### **一、使用nginx代理实现跨域**
 
@@ -54,6 +58,6 @@ app.get("/testmima", function (req, res) {
 > 2. nginx将请求转到后端服务器->&#x20;
 > 3. 后端服务器接到请求后对指定的网址进行请求(后端请求不会涉及到跨域问题)
 
-<figure><img src=".gitbook/assets/后端服务转发避免跨域.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/后端服务转发避免跨域.jpg" alt=""><figcaption></figcaption></figure>
 
 * 之所以需要在nginx服务器内写接口，是因为前端转发服务只能在开发环境下使用，生产环境下会失效，所以需要在**nginx的conf文件里配置代理**
