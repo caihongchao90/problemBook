@@ -32,6 +32,8 @@ location  /testapi {
 
 3、后端服务
 
+加这一层是因为使用nginx转发post请求，没有配置成功，**正常的话用nginx就可以直接转发，加这一层也是没有办法的办法！**
+
 ```javascript
 app.get("/testmima", function (req, res) {
     let appsecret = 'e9c5aceff2c74f58';
@@ -55,7 +57,7 @@ app.get("/testmima", function (req, res) {
 大概流程：
 
 > 1. 前端使用nginx接口发起请求->&#x20;
-> 2. nginx将请求转到后端服务器->&#x20;
+> 2. nginx将请求转到后端服务器（可选的一层）->&#x20;
 > 3. 后端服务器接到请求后对指定的网址进行请求(后端请求不会涉及到跨域问题)
 
 <figure><img src="../.gitbook/assets/后端服务转发避免跨域.jpg" alt=""><figcaption></figcaption></figure>
